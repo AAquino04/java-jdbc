@@ -1,16 +1,16 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class TestaListagem {
 
 	public static void main(String[] args) throws SQLException {
 
 		Connection connection = new ConnectionFactory().getConnection();
-		Statement stmt = connection.createStatement();
+		PreparedStatement stmt = connection.prepareStatement("SELECT id, nome, descricao FROM produto");
 
-		stmt.execute("SELECT * FROM produto");
+		stmt.execute();
 		ResultSet rst = stmt.getResultSet();
 		
 		while(rst.next()) {
