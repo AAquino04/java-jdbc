@@ -12,10 +12,10 @@ public class TestaInsercao {
 
 		stmt.execute("INSERT INTO produto (nome,descricao) VALUES ('Mouse', 'Mouse sem fio')",
 				Statement.RETURN_GENERATED_KEYS);
-		
+
 		ResultSet rs = stmt.getGeneratedKeys();
-		
-		while(rs.next()) {
+
+		while (rs.next()) {
 			Integer id = rs.getInt(1);
 			System.out.printf("O ID do produto cadastrado foi %s", id);
 		}
