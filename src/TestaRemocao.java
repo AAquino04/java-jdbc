@@ -8,7 +8,7 @@ public class TestaRemocao {
 		Connection connection = new ConnectionFactory().getConnection();
 		PreparedStatement stmt = connection.prepareStatement("DELETE FROM produto WHERE ID = ?");
 
-		Integer id = 7;
+		Integer id = 8;
 		stmt.setInt(1, id);
 
 		stmt.execute();
@@ -16,6 +16,7 @@ public class TestaRemocao {
 		Integer linhasModificadas = stmt.getUpdateCount();
 		System.out.printf("Quantidade de linhas modificadas: %s", linhasModificadas);
 
+		stmt.close();
 		connection.close();
 
 	}

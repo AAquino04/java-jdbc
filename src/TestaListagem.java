@@ -20,6 +20,8 @@ public class TestaListagem {
 			System.out.printf("ID: %s | Nome: %s | Descrição: %s \n", id, nome, descricao);
 		}
 		
+		rst.close();
+		stmt.close();
 		connection.close();
 	}
 

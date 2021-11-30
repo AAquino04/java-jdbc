@@ -10,6 +10,7 @@ public class TestaAtualiza {
 
 		stmt.execute();
 
+		stmt.close();
 		connection.close();
 
 	}

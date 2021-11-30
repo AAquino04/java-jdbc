@@ -27,6 +27,8 @@ public class TestaInsercao {
 			System.out.printf("O ID do produto cadastrado foi %s", id);
 		}
 
+		rs.close();
+		stmt.close();
 		connection.close();
 
 	}
